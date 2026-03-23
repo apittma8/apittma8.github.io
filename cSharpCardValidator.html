@@ -31,77 +31,7 @@
     </td>
     <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 1:</b> Find the version of Java for your platform if not already installed on your system. To do this, go to <a href=https://jdk.java.net/archive>https://jdk.java.net/archive</a> and download the latest version of the Open JDK. In this case, we are running on an x64 based Debian Linux virtual machine, so we will need to download the Linux/X64 tar archive. Note: You can also use Oracle Java, but many businesses have switched over to Open JDK due to licence concerns. 
   </tr>
-  <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep2_full.png"><img src="appStep2.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 2:</b> Now that we have found the correct download link for our platform, Java needs to be downloaded. To do this, Linux has a utility called wget that can directly download a remote file via the command line when it is passed the URI as an argument (<i>wget URI</i>). So, we now execute wget on our java tar archive to download it to the local filesystem.
-  </tr>
-    <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep3_full.png"><img src="appStep3.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 3:</b> We now need to extract Java runtime files from the archive that we have downloaded. To do this on the specific file we downloaded, we execute <i>tar -xzvf openjdk-25_linux-x64_bin.tar.gz</i>, which does this with arguments that specify to extract (x), gnu unzip (z), output log info verbosely (v), and use the specified file (f) argument.
-  </tr>
-      <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep4_full.png"><img src="appStep4.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 4:</b> Here, we are just verifying that Java is installed and runs successfully. To do this, we issue the command <i>cd ~/jdk-25/bin</i>, then execute <i>./java</i> as a command from within the installed java binary executable directory.
-      <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep5_full.png"><img src="appStep5.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 5:</b> Now that Java is installed, we can download our application, Minecraft. To do this, we go to <a href="http://minecraft.net/en-us/download/server">http://minecraft.net/en-us/download/server</a>, which will display the latest server Java jar file URI along with the command line required to execute and run the server, <i>java -Xmx1024M -Xms1024M -jar minecraft_server.1.21.10.jar nogui</i>. Once this is viewable, copy the URI to the Minecraft jar file as listed on the web page into our copy buffer, then transition back over to our ssh command window.
-  </tr>
-        <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep6_full.png"><img src="appStep6.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 6:</b> Just like was done previously to download Java to our server, we issue a <i>wget URI</i> for the URI of the Minecraft server jar that is currently stored in our paste buffer.
-  </tr>
-          <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep7_full.png"><img src="appStep7.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 7:</b> Now that we have the Minecraft server jar file downloaded, we can execute it to start up the application. Note: When downloading the server jar file, it was named <i>server.jar</i>, so we need to modify our java command line to use this jar file name to <i>java -Xmx1024M -Xms1024M -jar <u>server.jar</u> nogui</i>.
-  </tr>
-          <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">    <a target="_blank" rel="noopener noreferrer" href="appStep8_full.png"><img src="appStep8.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 8:</b> After starting the application in the previous step, if aborts with the error shown here. This is because when starting the Minecraft server application for the first time, it is supposed to automatically fail. This is because you are required to accept the end user license agreement (EULA).
-  </tr>
-          <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep9_full.png"><img src="appStep9.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 9:</b> As an output of this forced error, a file is created on the local filesystem where the server.jar is run from with the name <i>eula.txt</i>. Edit the file to change <i>eula=false</i> to instead say <i>eula=true</i>. Then save it.
-  </tr>
-            <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep10_full.png"><img src="appStep10.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 10:</b> Once this is completed and the eula.txt file is saved, you can then fully start the Minecraft server application. Again, by running <i>java -Xmx1024M -Xms1024M -jar <u>server.jar</u> nogui</i>. Once fully up, you will see the value <i>Done</i> output to the console log.
-  </tr>
-            <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep11_full.png"><img src="appStep11.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 11:</b> On any desktop PC with internet access and the Minecraft client installed, you can now startup the Minecraft client application. This image shows the initial client startup screen that displays while it loads.
-  </tr>
-            <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep12_full.png"><img src="appStep12.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 12:</b> Once the client is up and fully loaded,  select <i>Add Server</i> on the client, enter the public IP address of our new Minecraft application server, then click <i>done</i> to connect. (The public IP configured on Google Cloud Platform,in this case, was 34.153.17.166)
-  </tr>
-              <tr style="font-size: 14px;">
-    <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="appStep13_full.png"><img src="appStep13.png" width="100%"></a>
-    </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 13:</b> Success! The client has connected to the remote Minecraft application server. This also shows on the console log with a user connect statement showing: <i>EnderReaper64 joined the game</a>.
-  </tr>
-</table>
+  </table>
 
 
 	 
