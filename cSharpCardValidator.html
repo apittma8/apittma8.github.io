@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alexander Pittman Portfolio</title>
+  </head>
+  <body style="background-image: url('paper.jpg'); background-repeat: no-repeat; background-attachment: fixed; background-size: 100% 100%;">
+    <table width="100%" border="0">
+      <tr>
+        <td><a href="index.html"><img src="home.png" alt="Home"></a></td>
+        <td><a href="about.html"><img src="about.png" alt="About"></a></td>
+		<td><a href="resume.html"><img src="resume.png" alt="Resume"></a></td>
+        <td><a href="artifacts.html"><img src="artifacts.png" alt="Artifacts"></a></td>
+       <td><a href="contact.html"><img src="contact.png" alt="Contact"></a></td>
+      </tr>
+    </table>
+	<hr>
+
+    <h1>Artifacts - C# Credit Card Validator (Elysia API, Visual Studio, & Copilot)</h1>
+<br><b>Description:</b> This is a C# console application that interacts with the Elysia Tools Credit Card Validator API. I created the project framework, including the folder structure, model classes, and service class, before using GitHub Copilot to assist with generating the initial code. Although Copilot provided useful and mostly working code, it did not always return the requested response format, even after several prompting attempts. After manual changes, the code then fully behaved as disired. After this, I reviewed and refined it through the web version of Copilot and manually removed unnecessary validations and formatting to align the implementation with production best practices. The resulting codebase is clean, maintainable, and correctly processes the API’s returned data.
+<br><b>Related Class:</b> Kent State University, IT-11002, Visual Basic / Visual Studio, Fall 2021
+<br><b>Other Training:</b> C# development using Unity/Mono and Terraria/XNA in personal projects
+<br><b>Selection Rationale:</b> This artifact was selected because it demonstrates my ability to design and implement an API based application using C# and .NET within a development environment. It also highlights my ability to use AI tools while retaining responsibility for architectural decisions, code accuracy, and final implementation quality.
+<br><b>Competencies Demonstrated:</b> This is demonstrated in consuming REST APIs, organizing code into logical components, and working with JSON serialization and asynchronous programming patterns. It also reflects my ability to critically evaluate AI‑generated code, identify mismatches with actual API requirements, and make necessary corrections to ensure everything works properly.
+<br><b>Expected Outcome:</b>The completed application validates a user‑provided credit card number by sending it to the Elysia Tools Credit Card Validator API, processing the returned JSON, and displaying the results in a clear, readable format. 
+<br><b>Skills Obtained:</b> C# development, .NET console application design, REST API use, JSON input and output processing, asynchronous programming, code organization, AI‑assisted development, code review and editing, error handling, software debugging and testing
+<br><b>Format:</b> Webpage with images and text
+ 
+<p>
+<br><i>You can select any of the images to open a second link and tab to a larger and more detailed version.</i>
+<table style="width:100%; border-collapse:collapse;" border="1">
+  <tr style="font-size: 14px;">
+    <td style="width:45%; vertical-align: top; text-align: left;">
+    <a target="_blank" rel="noopener noreferrer" href="csNewProject.png"><img src="csNewProject.png" width="100%"></a>
+    </td>
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 1:</b> Create a New Project. To do this, I opened Visual Studio, created a new project as a Console App (.NET framework), then named it cardValidator.
+  </tr>
+	  <tr style="font-size: 14px;">
+    <td style="width:45%; vertical-align: top; text-align: left;">
+    <a target="_blank" rel="noopener noreferrer" href="csCreateFramework.png"><img src="csCreateFramework.png" width="100%"></a>
+    </td>
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 2:</b> Setup the base framework. Under the cardValidartor solition, create the Services and Models directories, and associated cs files under each. 
+		Program.cs is created in the root folder. The Models folder holds the request and response objects (ccValidateRequest.cs and ccValidateResponse.cs) that are used when talking to the API and the Services folder stores the code (ccValidateService.cs) that sends the credit card number to the API and returns the results.
+   	  </tr>
+	 <tr style="font-size: 14px;">
+    <td style="width:45%; vertical-align: top; text-align: left;">
+    <a target="_blank" rel="noopener noreferrer" href="csCopilotChat.png"><img src="csCopilotChat.png" width="100%"></a>
+    </td>
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 3:</b> Next, we startup GitHub Copilot Chat. A conversation is then started to develop code that will enable creation the service, call the API, and return of the results.
+		Here is the prompt I provided: 
+		<i>I am going to use an API to connect to Elysia Credit Card Validator with URL for a POST to https://elysiatools.com/en/api/tools/credit-card-validator.
+		I have created the framework which includes Models and Services folders. 
+		In Models, I have ccValidateRequest.cs and ccValidateResponse.cs but they are not yet filled in with code. 
+		Inside Services, I have ccValidateService.cs that also has no code in it yet. 
+		Finally, I also created Program.cs within the root folder. 
+		I now need guidance to help me create the content of these three C# pieces of code. 
+		Let's start with ccValidateRequest.cs.</i>
+   </tr>
+	<tr style="font-size: 14px;">
+    <td style="width:45%; vertical-align: top; text-align: left;">
+    <a target="_blank" rel="noopener noreferrer" href="csUnderConstruction.jpg"><img src="csUnderConstruction.jpg" width="100%"></a>
+    </td>
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 4:</b> Next ...  
+   </tr>
+  </table>
+
+
+	 
+
+    <p>&copy; 2026 Alexander E. Pittman</p>
+  </body>
+
+</html>
