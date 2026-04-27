@@ -16,10 +16,10 @@
 	<hr>
 
     <h1>Artifacts - C# Credit Card Validator (Elysia API, Visual Studio, & Copilot)</h1>
-<br><b>Description:</b> This is a C# console application that interacts with the Elysia Tools Credit Card Validator API. I created the project framework, including the folder structure, model classes, and service class, before using GitHub Copilot to assist with generating the initial code. Although Copilot provided useful and mostly working code, it did not always return the requested response format, even after several prompting attempts. After manual changes, the code then fully behaved as disired. After this, I reviewed and refined it through the web version of Copilot and manually removed unnecessary validations and formatting to align the implementation with production best practices. The resulting codebase is clean, maintainable, and correctly processes the API’s returned data.
+<br><b>Description:</b> This is a C# console application that interacts with the Elysia Tools Credit Card Validator API. I created the project framework, including the folder structure, model classes, and service class, before using GitHub Copilot to assist with generating the initial code. Although Copilot provided useful and mostly working code, it did not always return the requested response format, even after several prompting attempts. After manual changes, the code then fully behaved as desired. After this, I reviewed and refined it through the web version of Copilot and manually removed unnecessary validations and formatting to align the implementation with production best practices. The resulting codebase is clean, maintainable, and correctly processes the API’s returned data.
 <br><b>Related Class:</b> Kent State University, IT-11002, Visual Basic / Visual Studio, Fall 2021
 <br><b>Other Training:</b> C# development using Unity/Mono and Terraria/XNA in personal projects
-<br><b>Selection Rationale:</b> This artifact was selected because it demonstrates my ability to design and implement an API based application using C# and .NET within a development environment. It also highlights my ability to use AI tools while retaining responsibility for architectural decisions, code accuracy, and quality.
+<br><b>Selection Rationale:</b> This artifact was selected because it demonstrates my ability to design and implement an API-based application using C# and .NET within a development environment. It also highlights my ability to use AI tools while retaining responsibility for architectural decisions, code accuracy, and quality.
 <br><b>Competencies Demonstrated:</b> This is demonstrated in consuming REST APIs, organizing code into logical components, and working with JSON serialization and asynchronous programming patterns. It also reflects my ability to critically evaluate AI‑generated code, identify mismatches with actual API requirements, and make necessary corrections to ensure everything works properly.
 <br><b>Expected Outcome:</b>The completed application validates a user‑provided credit card number by sending it to the Elysia Tools Credit Card Validator API, processing the returned JSON, and displaying the results in a clear, readable format. 
 <br><b>Skills Obtained:</b> C# development, .NET console application design, REST API use, JSON input and output processing, asynchronous programming, code organization, AI‑assisted development, code review and editing, error handling, software debugging and testing
@@ -32,20 +32,20 @@
     <td style="width:45%; vertical-align: top; text-align: left;">
     <a target="_blank" rel="noopener noreferrer" href="csNewProject.png"><img src="csNewProject.png" width="100%"></a>
     </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 1:</b> Create a New Project. To do this, I opened Visual Studio, created a new project as a Console App (.NET framework), then named it cardValidator.
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 1:</b> Create a New Project. To do this, I opened Visual Studio, created a new project as a Console App (.NET Framework), then named it cardValidator.
   </tr>
 	  <tr style="font-size: 14px;">
     <td style="width:45%; vertical-align: top; text-align: left;">
     <a target="_blank" rel="noopener noreferrer" href="csCreateFramework.png"><img src="csCreateFramework.png" width="100%"></a>
     </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 2:</b> Setup the base framework. Under the cardValidartor solition, create the Services and Models directories, and associated cs files under each. 
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 2:</b> Setup the base framework. Under the cardValidator solution, create the Services and Models folder, and associated cs files under each. 
 		Program.cs is created in the root folder. The Models folder holds the request and response objects (ccValidateRequest.cs and ccValidateResponse.cs) that are used when talking to the API and the Services folder stores the code (ccValidateService.cs) that sends the credit card number to the API and returns the results.
    	  </tr>
 	 <tr style="font-size: 14px;">
     <td style="width:45%; vertical-align: top; text-align: left;">
     <a target="_blank" rel="noopener noreferrer" href="csCopilotChat.png"><img src="csCopilotChat.png" width="100%"></a>
     </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 3:</b> Next, we startup GitHub Copilot Chat. A conversation is then started to develop code that will enable creation the service, call the API, and return of the results.
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 3:</b> Next, we start up GitHub Copilot Chat. A conversation is then started to develop code that will enable creation of the service, call the API, and return of the results.
 		Here is the prompt I provided: 
 		<i>I am going to use an API to connect to Elysia Credit Card Validator with URL for a POST to https://elysiatools.com/en/api/tools/credit-card-validator.
 		I have created the framework which includes Models and Services folders. 
@@ -60,25 +60,25 @@
     <td style="width:45%; vertical-align: top; text-align: left;">
     <a target="_blank" rel="noopener noreferrer" href="generate.png"><img src="generate.png" width="100%"></a>
     </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 4:</b>Now, Github Copilot generates the code for cValidateRequest.cs, ccValidateResponse.cs, ccValidateService.cs, and Program.cs using Elysia's API documentation. It often adds a lot more code than may be necessary or may even skip something that is obviously important.
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 4:</b> Now, GitHub Copilot generates the code for ccValidateRequest.cs, ccValidateResponse.cs, ccValidateService.cs, and Program.cs using Elysia's API documentation. It often adds a lot more code than may be necessary or may even skip something that is obviously important.
 			<tr style="font-size: 14px;">
     <td style="width:45%; vertical-align: top; text-align: left;">
     <a target="_blank" rel="noopener noreferrer" href="build.png"><img src="build.png" width="100%"></a>
     </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 5:</b> Now, we attempt to build the code that was generated and saved locally to my Visual Studio work area. 
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 5:</b> Next, we attempt to build the code that was generated and saved locally to my Visual Studio workspace. 
    </tr>
 
 			<tr style="font-size: 14px;">
     <td style="width:45%; vertical-align: top; text-align: left;">
     <a target="_blank" rel="noopener noreferrer" href="ccValidateIssue.png"><img src="ccValidateIssue.png" width="100%"></a>
     </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 6:</b> This worked and generated working code that connected to the API and validated my sample credit card; however, the human readable report that returned showed "Card Type:" as "text." I wanted to see Visa show here. I tried several times to explain to Github Copilot that it was not pulling the card type, but instead a value describing the field content. Ultimately, I gave up and manually went into the code to determine how to fix the issue. This is an <b>important</b> aspect of using AI tooling. AI can't always fix or do everything. You still need to be able to understand what is going on in the code to both fix issues like this and understand when other things go wrong in production.
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 6:</b> This worked and generated working code that connected to the API and validated my sample credit card; however, the human-readable report that returned showed "Card Type:" as "text." I wanted to see Visa show here. I tried several times to explain to GitHub Copilot that it was not pulling the card type, but instead a value describing the field content. Ultimately, I gave up and manually went into the code to determine how to fix the issue. This is an <b>important</b> aspect of using AI tooling. AI can't always fix or do everything. You still need to be able to understand what is going on in the code to both fix issues like this and understand when other things go wrong in production.
    </tr>
 		<tr style="font-size: 14px;">
     <td style="width:45%; vertical-align: top; text-align: left;">
     <a target="_blank" rel="noopener noreferrer" href="ccValidateResult.png"><img src="ccValidateResult.png" width="100%"></a>
     </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 7:</b>Success! After rebuilding the code with my edits, the output now properly shows the "Card Type:" as Visa. AI tools can be extremely helpful and enable rapid development, but when things don't work as expected, a competent programmer is invaluable.
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 7:</b> Success! After rebuilding the code with my edits, the output now properly shows the "Card Type:" as Visa. AI tools can be extremely helpful and enable rapid development, but when things don't work as expected, a competent programmer is invaluable.
 
 	
 
