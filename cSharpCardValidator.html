@@ -55,12 +55,35 @@
 		I now need guidance to help me create the content of these three C# pieces of code. 
 		Let's start with ccValidateRequest.cs.</i>
    </tr>
+
 	<tr style="font-size: 14px;">
     <td style="width:45%; vertical-align: top; text-align: left;">
-    <a target="_blank" rel="noopener noreferrer" href="csUnderConstruction.jpg"><img src="csUnderConstruction.jpg" width="100%"></a>
+    <a target="_blank" rel="noopener noreferrer" href="generate.png"><img src="generate.png" width="100%"></a>
     </td>
-    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 4:</b> Next ...  
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 4:</b>Now, Github Copilot generates the code for cValidateRequest.cs, ccValidateResponse.cs, ccValidateService.cs, and Program.cs using Elysia's API documentation. It often adds a lot more code than may be necessary, sometimes also including validations that may not be needed.
    </tr>
+
+			<tr style="font-size: 14px;">
+    <td style="width:45%; vertical-align: top; text-align: left;">
+    <a target="_blank" rel="noopener noreferrer" href="build.png"><img src="build.png" width="100%"></a>
+    </td>
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 5:</b> Now, we attempt to build the code that was generated and saved locally to my Visual Studio work area. 
+   </tr>
+
+			<tr style="font-size: 14px;">
+    <td style="width:45%; vertical-align: top; text-align: left;">
+    <a target="_blank" rel="noopener noreferrer" href="ccValidateIssue.png"><img src="ccValidateIssue.png" width="100%"></a>
+    </td>
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 6:</b> This worked and generated working code that connected to the API and validated my sample credit card; however, the human readable report that returned showed "Card Type:" as "text." I wanted to see Visa show here. I tried several times to explain to Github Copilot that it was not pulling the card type, but instead a value describing the field content. Ultimately, I gave up and manually went into the code to determine how to fix the issue. This is an <b>important</b> aspect of using AI tooling. AI can't always fix or do everything. You still need to be able to understand what is going on in the code to both fix issues like this and understand when other things go wrong in production.
+   </tr>
+		<tr style="font-size: 14px;">
+    <td style="width:45%; vertical-align: top; text-align: left;">
+    <a target="_blank" rel="noopener noreferrer" href="ccValidateResult.png"><img src="ccValidateResult.png" width="100%"></a>
+    </td>
+    <td style="width:55%; vertical-align: top; text-align: left;"><b>Step 7:</b>After rebuilding the code with my edits, the output now properly shows the "Card Type:" as Visa.
+
+	
+
   </table>
 
 
